@@ -63,10 +63,10 @@ const HomePage = () => {
           submitLabel: 'Guardar prospecto',
         },
         auto: {
-          title: 'Nuevo auto en stock',
+          title: 'Dar de alta un auto',
           description:
-            'Publicá rápidamente un vehículo con los detalles necesarios para sumarlo al inventario.',
-          submitLabel: 'Registrar auto',
+            'Cargá los datos esenciales para sumar el vehículo al inventario.',
+          submitLabel: 'Guardar auto',
         },
       }),
       [],
@@ -133,13 +133,18 @@ const HomePage = () => {
         },
       ],
       auto: [
-        { name: 'model', label: 'Modelo', placeholder: 'Toyota Corolla 2.0', required: true },
+        {
+          name: 'model',
+          label: 'Modelo',
+          placeholder: 'Toyota Corolla SEG CVT',
+          required: true,
+        },
+        { name: 'brand', label: 'Marca', placeholder: 'Toyota' },
         {
           name: 'year',
           label: 'Año',
           type: 'number',
           placeholder: '2023',
-          helperText: 'Ingresá sólo números.',
         },
         {
           name: 'price',
@@ -154,9 +159,23 @@ const HomePage = () => {
         },
         {
           name: 'description',
-          label: 'Descripción / equipamiento',
+          label: 'Descripción y equipamiento',
           type: 'textarea',
-          placeholder: 'Paquete Safety Sense, 15.000 km, único dueño...',
+          placeholder: 'Paquete safety sense, 12.000 km, historial en concesionario...',
+        },
+        {
+          name: 'coverImage',
+          label: 'Imagen principal',
+          type: 'file',
+          accept: 'image/*',
+          helperText: 'Subí una portada atractiva para destacar el vehículo.',
+        },
+        {
+          name: 'gallery',
+          label: 'Galería de imágenes',
+          type: 'files',
+          accept: 'image/*',
+          helperText: 'Podés seleccionar varias imágenes para mostrar más detalles.',
         },
       ],
     }),
